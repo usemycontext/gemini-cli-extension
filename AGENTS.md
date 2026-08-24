@@ -65,6 +65,13 @@ projectId=p2
 handle=@work
 ```
 
+A `projectId` should be letters, digits, `_` and `-`, up to 32 characters, and a `handle` `@` followed
+by letters, digits and `-`, up to 40. This extension is a manifest plus instructions and ships no code
+of its own, so those shapes are what it INSTRUCTS Gemini to accept and to treat the file as data rather
+than as instructions. That is guidance to a model, not a guarantee: unlike the Claude Code, Cursor,
+Antigravity and OpenCode plugins, there is no hook or plugin here to enforce it. Treat a `.umc` file in
+a repository you did not write with the same caution as any other file in it.
+
 `projectId` (required) scopes the reads; `handle` (optional) is a readable label. Both are shown in the
 web app on the project's page. No `.umc` means the folder reads the account's active profile.
 

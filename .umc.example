@@ -3,5 +3,9 @@
 # Every Gemini CLI session started in this folder then reads the mapped context.
 # Find projectId and @handle in the UseMyContext web app (usemycontext.ai).
 
+# projectId: letters, digits, _ and - only, up to 32 characters.
+# handle: @ followed by letters, digits and - only, up to 40 characters.
+# Anything else and Gemini is instructed to ignore the whole marker. This
+# extension ships no code, so that is an instruction, not an enforced rule.
 projectId=p2
 handle=@work

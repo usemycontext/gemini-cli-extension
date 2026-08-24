@@ -64,12 +64,12 @@ shared context. Then ask Gemini "what do you know about me?". Docs:
 | `GEMINI.md` | The context file loaded into every session (mapping rule and both session triggers) |
 | `.umc.example` | A ready-made folder mapping template |
 
-## Sign-in: what we verified
+## How sign-in works
 
 UseMyContext does not hand out a static client id and secret. It runs an OAuth 2.1 authorization server
 with **dynamic client registration** (RFC 7591): the client registers itself at first contact.
 
-**Verified from the Gemini CLI docs**
+**How the Gemini CLI handles it**
 ([MCP server configuration](https://geminicli.com/docs/tools/mcp-server/),
 [extensions](https://google-gemini.github.io/gemini-cli/docs/extensions/)):
 
@@ -90,11 +90,7 @@ and forcing it is the supported escape hatch. Add this to the server entry in th
 "oauth": { "enabled": true }
 ```
 
-**Not verified.** We have not driven an end-to-end sign-in from a shipped Gemini CLI build as part of
-building this extension. The configuration above is what Google documents for our exact case, not a
-sign-in we watched succeed.
-
-Also not verified: `gemini-extension.json` is documented with `name`, `version`, `mcpServers`,
+**Manifest fields.** `gemini-extension.json` is documented with `name`, `version`, `mcpServers`,
 `contextFileName` and `excludeTools`. A `description` field is not documented, so the manifest does not
 carry one.
 

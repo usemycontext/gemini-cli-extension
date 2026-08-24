@@ -18,12 +18,12 @@ session.
 ## Install (Gemini CLI)
 
 ```
-gemini extensions install ./gemini-cli-extension
+gemini extensions install https://github.com/usemycontext/gemini-cli-extension
 ```
 
 `gemini extensions install` takes a GitHub URL or a local path. The public repository
-(`https://github.com/usemycontext/gemini-cli-extension`) does NOT exist yet, so use the local path
-until it does; a URL install would just 404. Extensions live under
+(`https://github.com/usemycontext/gemini-cli-extension`) is LIVE, so prefer the URL; a local path
+(`./gemini-cli-extension`) is for running a modified copy. Extensions live under
 `~/.gemini/extensions`. The first UseMyContext tool call opens the browser sign-in; let the HUMAN
 complete it. OAuth requires the human; an agent cannot complete it alone.
 

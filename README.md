@@ -29,18 +29,18 @@ are in.
 
 ## Install
 
-`gemini extensions install` takes a GitHub URL or a local path. **The public repository does not exist
-yet**, so today the local path is the one that works: clone or download this directory and point the CLI
-at it.
-
-```
-gemini extensions install ./gemini-cli-extension
-```
-
-Once the repository is published, this will work too:
+`gemini extensions install` takes a GitHub URL or a local path. The public repository is live, so the
+URL is the one-step route:
 
 ```
 gemini extensions install https://github.com/usemycontext/gemini-cli-extension
+```
+
+A local path works too, if you want to run a modified copy: clone or download this directory and point
+the CLI at it.
+
+```
+gemini extensions install ./gemini-cli-extension
 ```
 
 Installed extensions live under `~/.gemini/extensions`. Start `gemini`, and the first UseMyContext tool

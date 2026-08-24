@@ -1,0 +1,10 @@
+{
+  "name": "usemycontext",
+  "version": "1.0.0",
+  "mcpServers": {
+    "usemycontext": {
+      "httpUrl": "https://mcp.usemycontext.ai/mcp"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}

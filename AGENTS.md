@@ -4,8 +4,8 @@ Machine-first notes for coding agents. Human docs: README.md.
 
 ## What this is
 
-UseMyContext (usemycontext.ai) is the personal context layer for AI: one user-owned profile plus
-uploaded files, served to any MCP client from the remote server `https://mcp.usemycontext.ai/mcp`
+UseMyContext (usemycontext.ai) is one context for every AI app: a user-owned profile, uploaded
+files and calendar, served to any MCP client from the remote server `https://mcp.usemycontext.ai/mcp`
 (Streamable HTTP, OAuth 2.1 with RFC 7591 dynamic client registration). This repo IS the Gemini CLI
 extension: `gemini-extension.json` sits at the repo root.
 
@@ -68,8 +68,8 @@ handle=@work
 A `projectId` should be letters, digits, `_` and `-`, up to 32 characters, and a `handle` `@` followed
 by letters, digits and `-`, up to 40. This extension is a manifest plus instructions and ships no code
 of its own, so those shapes are what it INSTRUCTS Gemini to accept and to treat the file as data rather
-than as instructions. That is guidance to a model, not a guarantee: unlike the Claude Code, Cursor,
-Antigravity and OpenCode plugins, there is no hook or plugin here to enforce it. Treat a `.umc` file in
+than as instructions. That is guidance to a model, not a guarantee: unlike the Claude Code, Cursor and
+OpenCode plugins, there is no hook or plugin here to enforce it. Treat a `.umc` file in
 a repository you did not write with the same caution as any other file in it.
 
 `projectId` (required) scopes the reads; `handle` (optional) is a readable label. Both are shown in the
@@ -84,7 +84,7 @@ session.
 - The MCP tools are all read-only against the user's files (`search` and `fetch` are thin aliases of
   `search_files` and `get_file`, added for ChatGPT deep-research compatibility).
 - One tool, `suggest_update`, can write: it files a pending suggestion that the user reviews and
-  approves in the web app. Nothing the AI does ever edits the profile or files directly.
+  approves in the web app. Only the user's own setup answers save straight to the profile; nothing the AI does ever touches their files.
 - WHEN to reach for `suggest_update`: when a conversation has surfaced something new and durable about
   the user and is wrapping up (the user says thanks, goodbye, or that's all, or the task completes),
   offer to save it before the context is lost. The server advertises this trigger in its own tool

@@ -1,6 +1,6 @@
 {
   "name": "usemycontext",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "mcpServers": {
     "usemycontext": {
       "httpUrl": "https://mcp.usemycontext.ai/mcp"

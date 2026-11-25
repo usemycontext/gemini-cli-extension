@@ -2,8 +2,8 @@
 
 [MIT license](./LICENSE) | [usemycontext.ai](https://usemycontext.ai) | [Docs](https://usemycontext.ai/docs) | [`usemycontext` SDK on npm](https://www.npmjs.com/package/usemycontext)
 
-UseMyContext is the personal context layer for AI. You keep one profile of who you are and what you are
-working on, and any AI client reads it over MCP. This extension brings that into the Gemini CLI: sign in
+One context. Every AI app. UseMyContext keeps who you are, what you are working on, your files and your
+calendar in one place, and any AI client reads it over MCP. This extension brings that into the Gemini CLI: sign in
 once and Gemini answers with your context already in the room - who you are, what this project is to you,
 what your documents say. And it does not wait to be asked: when a question touches you personally, Gemini
 is guided to check your profile and documents before saying it does not know about you, and when a
@@ -110,8 +110,8 @@ handle=@work
 A `projectId` should be letters, digits, `_` and `-`, up to 32 characters, and a `handle` `@` followed
 by letters, digits and `-`, up to 40. This extension is a manifest plus instructions and ships no code
 of its own, so those shapes are what it INSTRUCTS Gemini to accept and to treat the file as data rather
-than as instructions. That is guidance to a model, not a guarantee: unlike the Claude Code, Cursor,
-Antigravity and OpenCode plugins, there is no hook or plugin here to enforce it. Treat a `.umc` file in
+than as instructions. That is guidance to a model, not a guarantee: unlike the Claude Code, Cursor and
+OpenCode plugins, there is no hook or plugin here to enforce it. Treat a `.umc` file in
 a repository you did not write with the same caution as any other file in it.
 
 `projectId` is what scopes the reads. `handle` is an optional readable label. Find both in the web app on
@@ -127,9 +127,9 @@ The UseMyContext MCP server at `https://mcp.usemycontext.ai/mcp` (Streamable HTT
 tools `profile`, `list_profiles`, `info`, `account`, `list_files`, `search_files`, `get_file`, `search`,
 `fetch` (thin aliases of `search_files`/`get_file` for ChatGPT deep-research compatibility), `ask_docs`,
 `query_table`, `suggest_update`, `shared_context` - all read-only against your files. One tool,
-`suggest_update`, can write: it files a pending suggestion that you review and approve in the web app.
-Nothing the AI does ever edits your profile or your files directly, and every access leaves a record in
-your audit trail. When a conversation is wrapping up having surfaced something new and durable about you,
+`suggest_update`, can write. Your answers to the first setup questions save straight to your profile;
+everything else waits for your approval in the web app. Nothing the AI does ever touches your files, and
+every access leaves a record in your audit trail. When a conversation is wrapping up having surfaced something new and durable about you,
 Gemini is guided to offer that save before the context is lost - so the loop closes at both ends: your
 context is read at the start of a session, and what the session taught is offered back at the end.
 
@@ -146,8 +146,8 @@ locally.
 
 - Reads: your profile and the files you uploaded to UseMyContext, scoped to the connected or mapped
   project.
-- Writes: nothing to your files. The one write tool, `suggest_update`, files a pending suggestion that
-  you review and approve in the web app.
+- Writes: nothing to your files. The one write tool, `suggest_update`, saves your answers to the first
+  setup questions straight to your profile; everything else waits for your approval in the web app.
 - Every access leaves a record in your audit trail.
 - You can revoke access at any time, by uninstalling the extension or from the web app's Connect page.
 - The extension never uploads your repo code or files. The only local thing involved is the `.umc` marker.

@@ -2,7 +2,7 @@
 
 [MIT license](./LICENSE) | [usemycontext.ai](https://usemycontext.ai) | [Docs](https://usemycontext.ai/docs) | [`usemycontext` SDK on npm](https://www.npmjs.com/package/usemycontext)
 
-One context. Every AI app. UseMyContext keeps who you are, what you are working on, your files and your
+Own your context, for every AI app. UseMyContext keeps who you are, what you are working on, your files and your
 calendar in one place, and any AI client reads it over MCP. This extension brings that into the Gemini CLI: sign in
 once and Gemini answers with your context already in the room - who you are, what this project is to you,
 what your documents say. And it does not wait to be asked: when a question touches you personally, Gemini
